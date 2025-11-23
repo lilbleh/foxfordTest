@@ -2,9 +2,7 @@
   "info": {
     "_postman_id": "26f446b5-d808-4bf3-8b46-cb8f5ff14738",
     "name": "Foxford English GE",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "48842816",
-    "_collection_link": "https://nktshklv-dev-9447701.postman.co/workspace/bleh's-Workspace~fade6eec-40e4-44f7-884b-e5378e90d4c8/collection/48842816-26f446b5-d808-4bf3-8b46-cb8f5ff14738?action=share&source=collection_link&creator=48842816"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
@@ -39,9 +37,17 @@
               "",
               "console.log(\"Teacher score:\", teacherScore, \"System score:\", systemScore);"
             ],
-            "type": "text/javascript",
-            "packages": {},
-            "requests": {}
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "42023191-74f1-430d-95b7-c3f616217db5",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -57,7 +63,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"task_text\": \"{{task_text}}\",\n  \"gold_answer\": \"{{gold_answer}}\",\n  \"student_answer\": \"{{student_answer}}\",\n  \"criteria_raw\": \"{{criteria_raw}}\",\n  \"student_name\": \"{{student_name}}\",\n  \"locale\": \"ru\"\n}\n",
+          "raw": "",
           "options": {
             "raw": {
               "language": "json"
@@ -74,39 +80,12 @@
             "evaluate"
           ]
         }
-      },
-      "response": []
-    }
-  ],
-  "event": [
-    {
-      "listen": "prerequest",
-      "script": {
-        "id": "a04cc391-8377-4af9-ac17-67a6c1313d51",
-        "type": "text/javascript",
-        "packages": {},
-        "requests": {},
-        "exec": [
-          ""
-        ]
-      }
-    },
-    {
-      "listen": "test",
-      "script": {
-        "id": "6643e2a0-fea0-4741-b320-88fea4e15214",
-        "type": "text/javascript",
-        "packages": {},
-        "requests": {},
-        "exec": [
-          ""
-        ]
       }
     }
   ],
   "variable": [
     {
-      "id": "e73ede7f-f733-44ea-a1c8-07b1517156c7",
+      "id": "a166ad63-e29b-42ba-8dd2-d7f40ab485d4",
       "key": "baseUrl",
       "value": ""
     }
