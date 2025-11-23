@@ -1,0 +1,16 @@
+{
+  "workspace": {
+    "id": "fade6eec-40e4-44f7-884b-e5378e90d4c8"
+  },
+  "entities": {
+    "collections": [
+      "../postman/collections/Foxford English 8.postman_collection.json",
+      "../postman/collections/Foxford English GE.postman_collection.json",
+      "../postman/collections/Foxford English 7.postman_collection.json"
+    ],
+    "environments": [],
+    "specs": [],
+    "flows": [],
+    "globals": []
+  }
+}

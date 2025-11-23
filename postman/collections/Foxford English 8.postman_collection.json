@@ -1,0 +1,109 @@
+{
+  "info": {
+    "_postman_id": "c039b6f3-10e6-4e11-83ee-80e153115f88",
+    "name": "Foxford English 8",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48842816",
+    "_collection_link": "https://nktshklv-dev-9447701.postman.co/workspace/bleh's-Workspace~fade6eec-40e4-44f7-884b-e5378e90d4c8/collection/48842816-c039b6f3-10e6-4e11-83ee-80e153115f88?action=share&source=collection_link&creator=48842816"
+  },
+  "item": [
+    {
+      "name": "Evaluate task 8",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "2cb8646e-9f3b-4133-909e-202e28f0dc87",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "let res;",
+              "try {",
+              "    res = pm.response.json();",
+              "} catch (e) {",
+              "    pm.test(\"Response is valid JSON\", function () {",
+              "        throw new Error(\"Response is not JSON: \" + e.message);",
+              "    });",
+              "}",
+              "",
+              "const teacherScore = Number(pm.iterationData.get(\"teacher_score\"));",
+              "",
+              "//нужно понять какое поле возвращается API ",
+              "const systemScore = Number(res.score);",
+              "",
+              "pm.test(\"System score equals teacher's Foxford score\", function () {",
+              "    pm.expect(systemScore, \"systemScore\").to.eql(teacherScore);",
+              "});",
+              "",
+              "console.log(\"Teacher score:\", teacherScore, \"System score:\", systemScore);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "id": "03f2695a-92ea-441a-b104-c1d049ba5616",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"task_text\": \"{{task_text}}\",\n  \"gold_answer\": \"{{gold_answer}}\",\n  \"student_answer\": \"{{student_answer}}\",\n  \"criteria_raw\": \"{{criteria_raw}}\",\n  \"student_name\": \"{{student_name}}\",\n  \"locale\": \"ru\"\n}\n"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/v1/evaluate",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "v1",
+            "evaluate"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "ce0bdbe3-9a1e-4bcb-83bf-c83558d59236",
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "25d1a634-7ab1-4ab4-b3c2-8cb5f2c5d0a5",
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "35669f97-1ec0-4435-9dcf-f8f8e7acd3c8",
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}
